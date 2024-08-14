@@ -3,9 +3,9 @@
     "version": "1.0.0",
     "main": "index.js",
     "scripts": {
-      "start": "node scripts/dependency-insights.js"
+        "start": "node scripts/dependency-insights.js"
     },
     "dependencies": {
-      "@octokit/rest": "^18.0.0"
+        "@octokit/rest": "^18.12.0"
     }
-  }
+}
