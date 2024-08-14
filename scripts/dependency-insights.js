@@ -1,3 +1,10 @@
+const { Octokit } = require("@octokit/rest");
+
+const octokit = new Octokit({
+  auth: process.env.GITHUB_TOKEN,
+});
+
+
 async function getAllDependenciesForOrg(org) {
     try {
       const repos = await octokit.request('GET /orgs/{org}/repos', { org });
