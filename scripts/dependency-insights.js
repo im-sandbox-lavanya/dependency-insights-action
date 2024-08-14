@@ -32,7 +32,7 @@ async function getDependencyInsights() {
     }
 
     for (const repo of repos) {
-      const insights = await octokit.dependencyGraph.getRepoGraph({
+      const insights = await octokit.rest.dependencyGraph.getRepoGraph({
         owner: orgName,
         repo: repo.name,
       });
