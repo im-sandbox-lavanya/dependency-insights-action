@@ -1,0 +1,27 @@
+# .github/workflows/dependency-insights.yml
+name: Dependency Insights
+
+on:
+  workflow_dispatch:
+
+jobs:
+  fetch-dependency-insights:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run dependency insights script
+      run: node scripts/dependency-insights.js
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        ORG_NAME: ${{ secrets.ORG_NAME }}
